@@ -20,5 +20,16 @@
   <%= @park.year_built %>
 </p>
 
+<p><strong>Rides in <%= @park.name %></strong></p>
+<p>Names:</p>
+
+<ul>
+  <% @rides.each do |ride| %>
+    <li> <%= link_to ride.name, ride%> </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'Back', parks_path %>
+<%= link_to 'Back', parks_path %> |
+<%= link_to 'Destroy', @park, method: :delete, data: { confirm: 'Are you sure?' } %>
+

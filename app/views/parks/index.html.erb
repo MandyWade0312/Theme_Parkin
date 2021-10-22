@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Parks</h1>
+<h1>Theme Parks</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>State</th>
-      <th>History</th>
-      <th>Year built</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,12 +14,7 @@
     <% @parks.each do |park| %>
       <tr>
         <td><%= park.name %></td>
-        <td><%= park.state %></td>
-        <td><%= park.history %></td>
-        <td><%= park.year_built %></td>
         <td><%= link_to 'Show', park %></td>
-        <td><%= link_to 'Edit', edit_park_path(park) %></td>
-        <td><%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

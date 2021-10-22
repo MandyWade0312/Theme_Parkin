@@ -8,6 +8,7 @@ class ParksController < ApplicationController
 
   # GET /parks/1 or /parks/1.json
   def show
+    @rides = @park.rides
   end
 
   # GET /parks/new
