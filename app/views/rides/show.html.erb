@@ -27,8 +27,17 @@
 
 <p>
   <strong>Park:</strong>
-  <%= @ride.park_id %>
+  <%= @ride.park.name %>
 </p>
 
+<p><strong>Reviews for <%= @ride.park.name %></strong></p>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li> <%= link_to review.summary, review%> </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
-<%= link_to 'Back', rides_path %>
+<%= link_to 'Back', rides_path %> |
+<%= link_to 'Destroy', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>

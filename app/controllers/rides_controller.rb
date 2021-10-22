@@ -8,6 +8,7 @@ class RidesController < ApplicationController
 
   # GET /rides/1 or /rides/1.json
   def show
+    @reviews = @ride.reviews
   end
 
   # GET /rides/new
