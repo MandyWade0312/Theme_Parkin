@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  type_of_ride: MyText
+  latitude: 1
+  longitude: 1
+  park: one
+
+two:
+  name: MyString
+  description: MyText
+  type_of_ride: MyText
+  latitude: 1
+  longitude: 1
+  park: two
