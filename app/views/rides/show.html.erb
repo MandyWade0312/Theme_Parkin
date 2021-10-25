@@ -45,15 +45,16 @@
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= link_to review.summary, review %></td>
+        <td><%= review.summary %></td>
         <td><%= review.body %></td>
         <td><%= review.stars %></td>
+        <td><%= link_to 'Delete Review', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= link_to 'New Review', new_review_path %> |
-<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Edit Ride', edit_ride_path(@ride) %> |
 <%= link_to 'Back', rides_path %> |
-<%= link_to 'Destroy', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete Ride', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
