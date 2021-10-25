@@ -29,6 +29,7 @@
   <% end %>
 </ul>
 
+<%= link_to 'New Ride', new_ride_path %> |
 <%= link_to 'Edit Park', edit_park_path(@park) %> |
 <%= link_to 'Back', parks_path %> |
 <%= link_to 'Delete Park', @park, method: :delete, data: { confirm: 'Are you sure?' } %>
