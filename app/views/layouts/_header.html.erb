@@ -2,6 +2,10 @@
   <div class="container flex justify-center mx-auto md:justify-start">
     <%= link_to "Parks", parks_path, class: "p-2 no-underline text-grey-darkest hover:bg-red-500 hover:text-yellow-100 #{current_controller?(:parks) && 'font-bold bg-red-700 text-yellow-100'}" %>
     <%= link_to "Rides", rides_path, class: "p-2 no-underline text-grey-darkest hover:bg-red-500 hover:text-yellow-100 #{current_controller?(:rides) && 'font-bold bg-red-700 text-yellow-100'}" %>
-    <%= link_to "Reviews", reviews_path, class: "p-2 no-underline text-grey-darkest hover:bg-red-500 hover:text-yellow-100 #{current_controller?(:reviews) && 'font-bold bg-red-700 text-yellow-100'}" %>
+    <%
+=begin%>
+ <%= link_to "Reviews", reviews_path, class: "p-2 no-underline text-grey-darkest hover:bg-red-500 hover:text-yellow-100 #{current_controller?(:reviews) && 'font-bold bg-red-700 text-yellow-100'}" %> 
+<%
+=end%>
   </div>
 </nav>
