@@ -51,6 +51,8 @@ class ParksController < ApplicationController
   # DELETE /parks/1 or /parks/1.json
   def destroy
     @park.destroy
+    Ride.where(id: @park.rides).delete_all
+    # Review.where(id: @ride.reviews).delete_all
     respond_to do |format|
       format.html { redirect_to parks_url, notice: "Park was successfully destroyed." }
       format.json { head :no_content }
