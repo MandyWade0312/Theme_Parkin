@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_182107) do
+ActiveRecord::Schema.define(version: 2021_10_26_185705) do
 
   create_table "parks", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,9 @@ ActiveRecord::Schema.define(version: 2021_10_26_182107) do
     t.integer "ride_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["ride_id"], name: "index_reviews_on_ride_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "rides", force: :cascade do |t|
@@ -52,5 +54,6 @@ ActiveRecord::Schema.define(version: 2021_10_26_182107) do
   end
 
   add_foreign_key "reviews", "rides"
+  add_foreign_key "reviews", "users"
   add_foreign_key "rides", "parks"
 end
