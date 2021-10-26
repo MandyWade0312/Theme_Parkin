@@ -23,6 +23,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @rides = @review.ride
+    @review.user = current_user
 
     respond_to do |format|
       if @review.save
