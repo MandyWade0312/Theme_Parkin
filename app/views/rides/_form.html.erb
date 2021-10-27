@@ -37,8 +37,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :park_id, "Park Name" %>
-    <%= form.collection_select :park_id, Park.order(:name), :id, :name %> 
+    <%= form.label :park_name, "Park Name" %>
+    <%= form.select :park_name, options_from_collection_for_select(Park.all.sort_by {|hash| hash[:name]}, :id, :name) %> 
+    <%
+=begin%>
+ <%= form.collection_select :park_id, Park.order(:name), :id, :name %>  
+<%
+=end%>
   </div>
 
   <div class="actions">
