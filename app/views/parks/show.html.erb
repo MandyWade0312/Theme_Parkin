@@ -29,7 +29,41 @@
   <% end %>
 </ul>
 
-<%= link_to 'New Ride', new_ride_path %> |
+<p><strong>Add a New Ride for <%= @park.name %><strong></p>
+<%= form_with(model: Ride.new, local: true) do |form| %>
+  <%= form.hidden_field :park_id, value: @park.id %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_of_ride %>
+    <%= form.text_area :type_of_ride %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.number_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.number_field :longitude %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%
+=begin%>
+ <%= link_to 'New Ride', new_ride_path %> | 
+<%
+=end%>
 <%= link_to 'Edit Park', edit_park_path(@park) %> |
 <%= link_to 'Back', parks_path %> |
 <%= link_to 'Delete Park', @park, method: :delete, data: { confirm: 'Are you sure?' } %>
