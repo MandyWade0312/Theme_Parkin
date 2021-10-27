@@ -49,19 +49,22 @@
         <td><%= review.summary %></td>
         <td><%= review.body %></td>
         <td><%= review.stars %></td>
-        <% if review.user.name.nil? %>
+        <% if review.user.nil? %>
           <td><%= 'Unknown Author' %></td>
         <% else %>
           <td><%= review.user.name %></td>
         <% end %>
-        <td><%= link_to 'Delete Review', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <td><%= link_to 'Delete Review', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<%= link_to 'New Review', new_review_path %> |
+<% if current_user %>
+  <%= link_to 'New Review', new_review_path %> |
+<% end %>
 <%= link_to 'Edit Ride', edit_ride_path(@ride) %> |
 <%= link_to 'Back', parks_path %> |
 <%= link_to 'Delete Ride', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
