@@ -63,8 +63,33 @@
 </table>
 
 <% if current_user %>
-  <%= link_to 'New Review', new_review_path %> |
+<p><strong>Add a New Review for <%= @ride.name %><strong></p>
+  <%= form_with(model: Review.new, local: true) do |form| %>
+    <%= form.hidden_field :ride_id, value: @ride.id %>
+    <div class="field">
+      <%= form.label :summary %>
+      <%= form.text_area :summary %>
+    </div>
+
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="field">
+      <%= form.label :stars %>
+      <%= form.number_field :stars %>
+    </div>
+    <%= form.submit %>
+  <% end %>
 <% end %>
+<%
+=begin%>
+ <% if current_user %>
+  <%= link_to 'New Review', new_review_path %> |
+<% end %> 
+<%
+=end%>
 <%= link_to 'Edit Ride', edit_ride_path(@ride) %> |
 <%= link_to 'Back', parks_path %> |
 <%= link_to 'Delete Ride', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
