@@ -2,13 +2,13 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
 
   # GET /reviews or /reviews.json
-  def index
-    @reviews = Review.all
-  end
+  # def index
+  #   @reviews = Review.all
+  # end
 
   # GET /reviews/1 or /reviews/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /reviews/new
   def new
@@ -16,8 +16,8 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /reviews or /reviews.json
   def create
