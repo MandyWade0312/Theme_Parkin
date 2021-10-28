@@ -11,27 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field m-6">
     <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <%= form.text_field :name, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"%>
 
-  <div class="field">
     <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
+    <%= form.email_field :email, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+ 
     <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
+    <%= form.password_field :password, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+  
     <%= form.label :password_confirmation, "Confirmation" %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit class: "my-4 bg-red-700 hover:bg-red-500 text-yellow-100 font-bold py-2 px-4 border border-red-700 rounded" %>
+
 <% end %>
