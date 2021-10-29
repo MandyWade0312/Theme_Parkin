@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field m-6">
-    <%= form.label :name %>
+  <div class="m-6 field">
+    <%= form.label :name, class: "font-bold text-blue-900" %>
     <%= form.text_field :name, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"%>
 
-    <%= form.label :email %>
+    <%= form.label :email, class: "font-bold text-blue-900" %>
     <%= form.email_field :email, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
  
-    <%= form.label :password %>
+    <%= form.label :password, class: "font-bold text-blue-900" %>
     <%= form.password_field :password, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
   
-    <%= form.label :password_confirmation, "Confirmation" %>
+    <%= form.label :password_confirmation, "Confirmation", class: "font-bold text-blue-900" %>
     <%= form.password_field :password_confirmation, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
   </div>
 
-    <%= form.submit class: "my-4 bg-red-700 hover:bg-red-500 text-yellow-100 font-bold py-2 px-4 border border-red-700 rounded" %>
+    <%= form.submit class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %>
 
 <% end %>
