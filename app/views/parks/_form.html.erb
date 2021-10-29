@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="m-6 field">
+    <%= form.label :name, class: "font-bold text-blue-900" %>
+    <%= form.text_field :name, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+  
+    <%= form.label :state, class: "font-bold text-blue-900" %>
+    <%= form.text_field :state, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+ 
+    <%= form.label :history, class: "font-bold text-blue-900" %>
+    <%= form.text_area :history, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+
+    <%= form.label :year_built, class: "font-bold text-blue-900" %>
+    <%= form.number_field :year_built, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
   </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :history %>
-    <%= form.text_area :history %>
-  </div>
-
-  <div class="field">
-    <%= form.label :year_built %>
-    <%= form.number_field :year_built %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %>
 <% end %>
