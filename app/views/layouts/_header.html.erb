@@ -1,13 +1,13 @@
 
 <header>
-<nav class="bg-gradient-to-r from-green-400 to-blue-500 flex justify-between p-4">
+<nav class="flex justify-between p-4 bg-gradient-to-r from-green-400 to-blue-500">
   <div>
     <%= link_to "Parks", parks_path, class: "p-4 no-underline text-blue-900 text-2xl hover:bg-blue-500 hover:text-green-100 #{current_controller?(:parks) && 'font-bold bg-blue-700 text-green-100'}" %>
     <%= link_to "Rides", rides_path, class: "p-4 no-underline text-blue-900 text-2xl hover:bg-blue-500 hover:text-green-100 #{current_controller?(:rides) && 'font-bold bg-blue-700 text-green-100'}" %>
   </div>
   <div >
       <% if current_user %>
-        Hi <%= current_user.name %>
+       <span class="p-4 text-2xl text-blue-900"> Hello <%= current_user.name %> </span>
       
         <%= link_to 'Log out', logout_path, method: :delete, class: "p-4 no-underline text-2xl text-blue-900 hover:bg-green-400 hover:text-blue-900" %>
       <% else %>
