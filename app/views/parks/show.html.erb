@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<p class="mt-1">
+  <strong class="m-6 font-bold text-blue-900">Name:</strong>
   <%= @park.name %>
 </p>
 
-<p>
-  <strong>State:</strong>
+<p class="mt-1">
+  <strong class="m-6 font-bold text-blue-900">State:</strong>
   <%= @park.state %>
 </p>
 
-<p>
-  <strong>History:</strong>
+<p class="mt-1">
+  <strong class="m-6 font-bold text-blue-900">History:</strong>
   <%= @park.history %>
 </p>
 
-<p>
-  <strong>Year built:</strong>
+<p class="mt-1">
+  <strong class="m-6 font-bold text-blue-900">Year built:</strong>
   <%= @park.year_built %>
 </p>
 
-<p><strong>Rides in <%= @park.name %></strong></p>
-<p>Names:</p>
+<p class="mt-2 ml-6 text-xl font-bold text-blue-900"><strong>Rides in <%= @park.name %></strong></p>
+<p class="mx-6 font-bold text-blue-900">Names:</p>
 
 <ul>
   <% @rides.each do |ride| %>
@@ -29,42 +29,30 @@
   <% end %>
 </ul>
 
-<p><strong>Add a New Ride for <%= @park.name %><strong></p>
+<p class="mt-6 ml-6 text-xl font-bold text-blue-900"><strong>Add a New Ride for <%= @park.name %><strong></p>
 <%= form_with(model: Ride.new, local: true) do |form| %>
   <%= form.hidden_field :park_id, value: @park.id %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="mx-6 field">
+    <%= form.label :name, class: "font-bold text-blue-900" %>
+    <%= form.text_field :name, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <%= form.label :description, class: "font-bold text-blue-900" %>
+    <%= form.text_area :description, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+ 
+    <%= form.label :type_of_ride, class: "font-bold text-blue-900" %>
+    <%= form.text_area :type_of_ride, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
+  
+    <%= form.label :latitude, class: "font-bold text-blue-900" %>
+    <%= form.number_field :latitude, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
 
-  <div class="field">
-    <%= form.label :type_of_ride %>
-    <%= form.text_area :type_of_ride %>
+    <%= form.label :longitude, class: "font-bold text-blue-900" %>
+    <%= form.number_field :longitude, class: "border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" %>
   </div>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.number_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.number_field :longitude %>
-  </div>
-  <%= form.submit %>
+  <%= form.submit class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %>
 <% end %>
 
-<%
-=begin%>
- <%= link_to 'New Ride', new_ride_path %> | 
-<%
-=end%>
-<%= link_to 'Edit Park', edit_park_path(@park) %> |
-<%= link_to 'Back', parks_path %> |
-<%= link_to 'Delete Park', @park, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Edit Park', edit_park_path(@park), class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %> |
+<%= link_to 'Back', parks_path, class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %> |
+<%= link_to 'Delete Park', @park, method: :delete, data: { confirm: 'Are you sure?' }, class: "m-6 bg-blue-700 hover:bg-blue-500 text-green-100 font-bold py-2 px-4 border border-green-700 rounded" %>
 
