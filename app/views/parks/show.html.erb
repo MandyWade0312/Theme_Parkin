@@ -12,7 +12,7 @@
 
 <p class="mt-1">
   <strong class="m-6 font-bold text-blue-900">History:</strong>
-  <%= @park.history %>
+  <p class="mx-8 overflow-x-auto"><%= @park.history %></p>
 </p>
 
 <p class="mt-1">
@@ -25,7 +25,7 @@
 
 <ul>
   <% @rides.each do |ride| %>
-    <li> <%= link_to ride.name, ride%> </li>
+    <li class="ml-8"> <%= link_to ride.name, ride%> </li>
   <% end %>
 </ul>
 
