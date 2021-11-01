@@ -9,11 +9,11 @@
       <% if current_user %>
        <span class="p-4 text-2xl text-blue-900"> Hello <%= current_user.name %> </span>
       
-        <%= link_to 'Log out', logout_path, method: :delete, class: "text-blue-900 p-4 no-underline text-2xl hover:bg-green-400 hover:text-blue-900" %>
+        <%= link_to 'Log out', logout_path, method: :delete, class: "text-green-800 p-4 no-underline text-2xl hover:bg-green-400 hover:text-blue-900" %>
       <% else %>
-        <%= link_to 'Log in', login_path, class: "text-blue-900 p-4 no-underline text-2xl hover:bg-green-400 hover:text-blue-900"%>
+        <%= link_to 'Log in', login_path, class: "text-green-800 p-4 no-underline text-2xl hover:bg-green-400 hover:text-blue-900"%>
     
-        <%= link_to 'Sign up', new_user_path, class: "p-4 no-underline text-2xl text-blue-900 hover:bg-green-400 hover:text-blue-900"%>
+        <%= link_to 'Sign up', new_user_path, class: "p-4 text-green-800 no-underline text-2xl hover:bg-green-400 hover:text-blue-900"%>
       <% end %>
   </div>
 </nav>
