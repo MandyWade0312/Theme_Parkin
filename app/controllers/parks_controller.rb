@@ -66,6 +66,6 @@ class ParksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def park_params
-      params.require(:park).permit(:name, :state, :history, :year_built)
+      params.require(:park).permit(:name, :state, :history, :year_built, :map)
     end
 end
