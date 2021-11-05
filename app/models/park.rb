@@ -4,4 +4,6 @@ class Park < ApplicationRecord
     validates :state, presence: true
     validates :history, presence: true
     validates :year_built, presence: true
+
+    has_one_attached :map
 end
