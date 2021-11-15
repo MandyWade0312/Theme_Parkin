@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import "stylesheets/application"
-// import "../maps";
+import "./maps";
 
 Rails.start()
 Turbolinks.start()
