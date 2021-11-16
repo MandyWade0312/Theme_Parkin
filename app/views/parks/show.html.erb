@@ -28,7 +28,7 @@
 
 
 <% if @park.map.attached? %> 
-  <div id="map" data-map-url="<%= url_for @park.map %>">   </div> 
+  <div id="map" style="height: <%= 600 * @park.aspect_ratio %>px" data-map-url="<%= url_for @park.map %>" data-map-width="<%= @park.map_width %>" data-map-height="<%= @park.map_height %>" >   </div> 
 <% end %>   
 
 
